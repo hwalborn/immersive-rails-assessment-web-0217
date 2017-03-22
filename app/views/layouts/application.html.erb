@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if logged_in %>
+      <%= link_to "Logout", account_path(current_user), method: :delete %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

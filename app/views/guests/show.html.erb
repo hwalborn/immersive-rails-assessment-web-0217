@@ -1,0 +1,10 @@
+<h1>Name: <%= @guest.name %></h1>
+<h3>Occupation: <%= @guest.occupation %></h3>
+<%= form_for @guest, method: :patch do |f| %>
+  <%= f.label :episode_number %>
+  <%= f.number_field :appearances %>
+  <%= f.submit %>
+<% end %>
+<% @guest.episodes.each do |episode| %>
+  <p>appeared on :<%= episode.date %></p>
+<% end %>
